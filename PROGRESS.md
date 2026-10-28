@@ -26,3 +26,33 @@ Plan: `.agent/plans/1.app-shell.md`. Code is written for every task. Items marke
 - [x] C3 Chat UI (streaming chat confirmed in browser)
 - [x] C4 RLS isolation check (live via API: user B sees 0 threads and gets 404 on read, delete and post to A's thread; A's thread survives)
 - [x] D1 Docs + progress (README "Running Locally" added, with the grants migration and frontend env notes)
+
+### Module 2: BYO Retrieval + Memory
+
+Split into two sub-plans. Embeddings: `openai/text-embedding-3-small` via OpenRouter (1536 dims). Needs OpenRouter credit.
+
+**Plan 3: Ingestion** (`.agent/plans/3.ingestion.md`)
+- [ ] A1 Migration `003_documents.sql` (pgvector, documents/chunks, Storage bucket, Realtime)
+- [ ] B1 Config + deps
+- [ ] B2 Chunking service
+- [ ] B3 Embeddings service
+- [ ] B4 Ingestion service
+- [ ] B5 Documents router
+- [ ] B6 Live backend check
+- [ ] C1 API client
+- [ ] C2 `useDocuments` + Realtime
+- [ ] C3 Documents page + nav
+- [ ] C4 Browser check
+- [ ] D1 Docs + progress
+
+**Plan 4: Retrieval tool** (`.agent/plans/4.retrieval-tool.md`)
+- [ ] A1 Migration `004_match_chunks.sql`
+- [ ] B1 Config
+- [ ] B2 Retrieval service
+- [ ] B3 Tool loop in `llm.py`
+- [ ] B4 Executor unit test
+- [ ] B5 Live check + threshold tuning
+- [ ] C1 API types
+- [ ] C2 Chat state + rendering
+- [ ] C3 Browser check
+- [ ] D1 Docs, progress, push
