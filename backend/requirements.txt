@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+openai
+supabase
+psycopg[binary]
+langsmith
+pytest
+httpx
